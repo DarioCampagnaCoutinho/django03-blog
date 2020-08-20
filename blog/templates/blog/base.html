@@ -1,15 +1,17 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
 </head>
 <body>
-<div>
+<div id="content">
     {% block content %}
     {% endblock %}
 </div>
-<div>
+<div id="sidebar">
     <h2>Meu Blog</h2>
     <p>Esse e meu BLOG!!</p>
 </div>
