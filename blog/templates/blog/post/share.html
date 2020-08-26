@@ -12,7 +12,12 @@
         <h1>Share "{{ post.title }}" by e-mail!</h1>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {% for field in form %}
+                <div>
+                    {{ field.errors }}
+                    {{ field.label_tag }} {{ field }}
+                </div>
+            {% endfor %}
             <input type="submit" value="Enviar E-mail">
         </form>
     {% endif %}
