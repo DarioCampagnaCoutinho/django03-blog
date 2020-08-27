@@ -32,15 +32,13 @@ def post_detail(request, year, month, day, post):
             new_comment = comment_form.save(commit=False)
             new_comment.post = post
             new_comment.save()
-        else:
-            comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
     return render(request, 'blog/post/detail.html',
-                  {
-                   'post': post,
+                  {'post': post,
                    'comments': comments,
-                   'new_comments': new_comment,
-                   'comment_form': comment_form
-                   })
+                   'new_comment': new_comment,
+                   'comment_form': comment_form})
 
 
 def post_share(request, post_id):
