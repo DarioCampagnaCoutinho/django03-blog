@@ -122,6 +122,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Email
-
+# Usado para testes
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
